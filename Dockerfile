@@ -1,9 +1,7 @@
-ARG DOCKER_VERSION=19.03.3
+ARG DOCKER_VERSION=19.03.4
 ARG COMPOSE_VERSION=1.24.1
 
 FROM docker:${DOCKER_VERSION}
-
-MAINTAINER Antony Goetzschel <mail@ago.dev>
 
 RUN apk update
 
@@ -30,12 +28,8 @@ RUN docker --version && \
     git --version
 
 ## docker-entrypoint.sh from Docker-Docker-Image
-##  https://github.com/docker-library/docker/tree/6001c15038b05149a83dcc17e1bbeedc92979f6d
+##  https://github.com/docker-library/docker/blob/4dd3f3fe1f263ea74cdc8bed6091008cf62ab751/19.03/docker-entrypoint.sh
 COPY docker-entrypoint.sh /usr/local/bin/
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["sh"]
-
-LABEL org.label-schema.docker.dockerfile="/Dockerfile" \
-      org.label-schema.vcs-type="Git" \
-      org.label-schema.vcs-url="https://github.com/dev-ago/docker-network-utils"
