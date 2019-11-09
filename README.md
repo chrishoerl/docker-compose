@@ -1,21 +1,26 @@
 # Docker, docker-compose and git
 
-This docker image installs `docker-compose` and `git` on top of the `docker` image.
-This is very useful for CI/CD pipelines, this ist a nested docker image, to run docker on docker container.
+This docker image has `docker-compose` and `git` installed on top of `docker`.
+This is very useful for CI/CD pipelines, this is a nested docker image, to run docker in docker.
 
 ## Versions / ARGS
 - **latest**
 
-Include the current versions version of `docker` and `docker-compose`:
-- docker 19.03.3
-- docker-compose
+Includes the current versions of `docker` and `docker-compose`:
+- docker 19.03.4
+- docker-compose 10.24.1
 
-## Usage examples for Gitlab CI/CD
+## Usage example for Gitlab CI/CD
 
-You can use this image in you `.gitlab-ci.yml` file:
+This image is for use in a `.gitlab-ci.yml` file:
 
 ```` yml
-image: devago/docker-compose
+image: chrishoerl/docker-compose
+
+stages:
+  - build
+  - deploy
+  - test
 
 before_script:
   - docker info
