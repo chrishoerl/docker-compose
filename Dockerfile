@@ -20,9 +20,10 @@ RUN apk update
 RUN apk upgrade
 
 RUN apk add --no-cache \
+        --update \
 		ca-certificates \
 		py-pip \
-		#python-dev \
+		python-dev \
 		libffi-dev \
 		openssl-dev \
 		gcc \
@@ -31,6 +32,7 @@ RUN apk add --no-cache \
 		bash \
 		git \
 		curl
+
 
 RUN pip install "docker-compose${COMPOSE_VERSION:+==}${COMPOSE_VERSION}"
 
