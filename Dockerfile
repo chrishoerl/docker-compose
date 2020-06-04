@@ -20,10 +20,9 @@ RUN apk update
 RUN apk upgrade
 
 RUN apk add --no-cache \
-        --update \
 		ca-certificates \
 		py-pip \
-		python-dev \
+		python3-dev \
 		libffi-dev \
 		openssl-dev \
 		gcc \
