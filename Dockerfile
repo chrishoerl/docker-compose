@@ -22,7 +22,6 @@ RUN apk upgrade
 RUN apk add --no-cache \
 		ca-certificates \
 		py-pip \
-		python \
 		#python-dev \
 		libffi-dev \
 		openssl-dev \
