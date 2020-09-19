@@ -7,7 +7,7 @@ This is very useful for CI/CD pipelines, this is a nested docker image, to run d
 - **latest**
 
 Includes the current versions of `docker` and `docker-compose`:
-- docker 19.03.12
+- docker 19.03.13
 - docker-compose 1.27.3
 
 ## Usage example for Gitlab CI/CD
