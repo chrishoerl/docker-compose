@@ -43,8 +43,9 @@ RUN apk add --no-cache \
 		make \
 		bash \
 		git \
-		curl
-
+		curl \
+		rust \
+		cargo
 
 RUN pip install "docker-compose${COMPOSE_VERSION:+==}${COMPOSE_VERSION}"
 
